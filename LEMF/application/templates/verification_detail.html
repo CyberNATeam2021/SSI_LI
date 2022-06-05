@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Verification{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+    <div class="row no-gutters">
+
+        <div class="col-md-9 order-md-2">
+
+            <div class="single-post-home">
+
+                <h5>
+                        {{ verification.policy.name }}
+                </h5>
+
+                            <p class="p-small-two text-muted">
+                  State:  {{ verification.state}}
+                </p>
+
+
+                 <p class="p-small-two text-muted">
+                  Created at:  {{ verification.created_at_utc}}
+                </p>
+
+
+            <p class="p-small-two text-muted">
+                  Verification ID:  {{ verification.verification_id}}
+                </p>
+
+
+
+
+                <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteVerificationModal">
+                    Delete
+                </button>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-md-3 order-md-1">
+            {% include 'about_me_snippet.html' %}
+        </div>
+
+    </div>
+</div>
+
+
+
+{% include 'verification_delete_modal.html' %}
+{% endblock %}

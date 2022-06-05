@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+
+    <div class="row no-gutters">
+
+        <div class="col-md-9 order-md-2">
+            <div class="about-page-block">
+                <p class="lead">About LEMF</p>
+                <hr>
+                Issuer DID: Vn4WVF5qFr2MfHsjXSSJjz
+                    <hr>
+                Blockchain Network: Sovrin Staging Network
+                <hr>
+                Region: United States (Central US)
+
+                <hr>
+
+            All LEMF transactions are available at this link:
+
+                <a href="https://indyscan.io/txs/SOVRIN_STAGINGNET/domain?page=1&pageSize=50&filterTxNames=[]&sortFromRecent=true&search=Vn4WVF5qFr2MfHsjXSSJjz">Indy Scan</a>
+
+<hr>
+
+            </div>
+        </div>
+
+        <div class="col-md-3 order-md-1">
+            {% include 'about_me_snippet.html' %}
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
