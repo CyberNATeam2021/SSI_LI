@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: trinsic
+Version: 1.1.5018
+Summary: Service Clients to access Trinsic APIs
+Home-page: https://github.com/streetcred-id/service-clients/tree/master/python/package
+Author: UNKNOWN
+Author-email: support@trinsic.id
+License: UNKNOWN
+Keywords: Trinsic
+Platform: UNKNOWN
+Requires-Dist: msrest (>=0.5.2)
+
+Service Clients to access Trinsic APIs
+
+

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Connection{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+    <div class="row no-gutters">
+
+        <div class="col-md-9 order-md-2">
+
+            <div class="single-post-home">
+
+                <h5>
+                    {{ connection.name }}
+                </h5>
+
+            <p class="p-small-two text-muted">
+                  Connection ID:  {{ connection.connection_id }}
+                </p>
+
+                 <p class="p-small-two text-muted">
+                   State: {{ connection.state }}
+                </p>
+
+                <p class="p-small-two text-muted">
+                   Created at: {{ connection.created_at_utc }}
+                </p>
+
+
+                <a class="btn btn-sm btn-outline-success mr-1" href="{{url_for('verifications_connection', connection_id=connection.connection_id) }}">Verifications</a>
+                <a class="btn btn-sm btn-outline-success mr-1" href="{{url_for('credentials_connection', connection_id=connection.connection_id) }}">Credentials</a>
+                <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteConnectionModal">
+                    Delete
+                </button>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-md-3 order-md-1">
+            {% include 'about_me_snippet.html' %}
+        </div>
+
+    </div>
+</div>
+
+
+{% include 'connection_delete_modal.html' %}
+{% endblock %}

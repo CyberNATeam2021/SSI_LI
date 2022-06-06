@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+    <div class="row no-gutters">
+
+
+        <div class="col-md-3 order-md-1">
+            {% include 'about_me_snippet.html' %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

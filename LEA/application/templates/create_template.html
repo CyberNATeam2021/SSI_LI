@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Template{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-3">
+    <h2>Create a new Credential Definition</h2>
+    <div class="row no-gutters justify-content-center">
+        <div class="col-md-4">
+
+            <form method="POST" novalidate>
+
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.name.label }}
+
+                    {{ form.name(class="form-control") }}
+                    {% if form.name.errors %}
+                    {% for error in form.name.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.version.label }}
+                    {{ form.version(class="form-control") }}
+                    {% if form.version.errors %}
+                    {% for error in form.version.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.attribute1.label }}
+                    {{ form.attribute1(class="form-control") }}
+                    {% if form.attribute1.errors %}
+                    {% for error in form.attribute1.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.attribute2.label }}
+                    {{ form.attribute2(class="form-control") }}
+                    {% if form.attribute2.errors %}
+                    {% for error in form.attribute2.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.attribute3.label }}
+                    {{ form.attribute3(class="form-control") }}
+                    {% if form.attribute3.errors %}
+                    {% for error in form.attribute3.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                  <div class="form-group">
+                    {{ form.attribute4.label }}
+                    {{ form.attribute4(class="form-control") }}
+                    {% if form.attribute4.errors %}
+                    {% for error in form.attribute4.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group">
+                    {{ form.attribute5.label }}
+                    {{ form.attribute5(class="form-control") }}
+                    {% if form.attribute5.errors %}
+                    {% for error in form.attribute5.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.tag.label }}
+                    {{ form.tag(class="form-control") }}
+                    {% if form.tag.errors %}
+                    {% for error in form.tag.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+
+                <p>{{ form.supportRevocation() }} {{ form.supportRevocation.label }}</p>
+
+                {{ form.submit(class="btn btn-outline-secondary") }}
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

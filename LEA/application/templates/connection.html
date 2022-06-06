@@ -1,0 +1,29 @@
+{% extends 'base1.html' %}
+
+{% block title %}Connection invitation{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+    <div class="row no-gutters">
+
+        <div class="col-md-9 order-md-2">
+
+            <div class="single-post-home">
+
+       Scan this code to establish a connection
+                <br>
+                <img src="{{url}}">
+
+
+            </div>
+
+
+        </div>
+
+        <div class="col-md-3 order-md-1">
+            {% include 'about_me_snippet.html' %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

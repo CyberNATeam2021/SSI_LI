@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Send Email{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-3">
+    <h2>Send invitation to connect</h2>
+
+    <p>Email and password to access the service</p>
+    <div class="row no-gutters justify-content-center">
+        <div class="col-md-4">
+
+            <form method="POST" novalidate>
+
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.email.label }}
+                    {{ form.email(class="form-control") }}
+                    {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+
+
+                <div class="form-group">
+                    {{ form.password.label }}
+                    {{ form.password(class="form-control") }}
+                    {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+
+                <p>Data required to send the email</p>
+
+
+                 <div class="form-group">
+                    {{ form.email_to.label }}
+                    {{ form.email_to(class="form-control") }}
+                    {% if form.email_to.errors %}
+                    {% for error in form.email_to.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.object.label }}
+                    {{ form.object(class="form-control") }}
+                    {% if form.object.errors %}
+                    {% for error in form.object.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.message.label }}
+                    {{ form.message(class="form-control") }}
+                    {% if form.message.errors %}
+                    {% for error in form.message.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                    <br>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+
+                {{ form.submit(class="btn btn-outline-secondary") }}
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

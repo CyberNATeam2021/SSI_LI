@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Connections{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+    <div class="row no-gutters">
+
+        <div class="col-md-9 order-md-2">
+            {% for verification in verifications %}
+            <div class="single-post-home">
+                <h5>
+                        {{ verification.policy.name }}
+                </h5>
+
+
+
+                 <p class="p-small-two text-muted">
+                   State: {{ verification.state }}
+                </p>
+
+                <p class="p-small-two text-muted">
+                   Created at: {{ verification.created_at_utc }}
+                </p>
+
+                  <p class="p-small-two text-muted">
+                   Verification ID: {{ verification.verification_id }}
+                </p>
+
+
+
+
+
+                    <p class="p-small-two text-muted">
+                      <a class="read-more" href="{{ url_for('verification_detail', verification_id=verification.verification_id) }}">Verification details</a>
+                    </p>
+
+
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="col-md-3 order-md-1">
+            {% include 'about_me_snippet.html' %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

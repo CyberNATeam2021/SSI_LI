@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Verifications - Connection{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+    <div class="row no-gutters">
+
+        <div class="col-md-9 order-md-2">
+            {% for verification in verifications %}
+            <div class="single-post-home">
+                <h5>
+                      State: {{ verification.state }}
+                </h5>
+
+                <p class="p-small-one text-muted mb-0">
+                   Validity: {{ verification.is_valid }}
+                </p>
+<br>
+
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="col-md-3 order-md-1">
+            <a class="btn btn-sm btn-outline-success mr-1" href="{{ url_for('send_verification', connection_id=connection_id) }}">Request verification</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

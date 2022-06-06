@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Template{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+    <div class="row no-gutters">
+
+        <div class="col-md-9 order-md-2">
+
+            <div class="single-post-home">
+
+                <h5>
+                        {{ credential_definition.name }}
+                </h5>
+
+                            <p class="p-small-two text-muted">
+                 Versione:   {{ credential_definition.version}}
+                </p>
+
+
+            <p class="p-small-two text-muted">
+               Schema ID:     {{ credential_definition.schema_id}}
+                </p>
+
+                 <p class="p-small-two text-muted">
+                  Definition ID:  {{ credential_definition.definition_id }}
+                </p>
+
+                {% for attribute in credential_definition.attributes %}
+                        <p class="p-small-two text-muted">
+                                 {{attribute}}
+                            </p>
+                        {%endfor%}
+
+
+                     <p class="p-small-two text-muted">
+                Revocable:    {{ credential_definition.supports_revocation }}
+                </p>
+
+
+                <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteTemplateModal">
+                    Delete
+                </button>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-md-3 order-md-1">
+            {% include 'about_me_snippet.html' %}
+        </div>
+
+    </div>
+</div>
+
+
+{% include 'template_delete_modal.html' %}
+{% endblock %}

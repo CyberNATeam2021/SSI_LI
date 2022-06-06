@@ -1,0 +1,33 @@
+{% extends 'base1.html' %}
+
+{% block title %}Verification Request{% endblock %}
+
+{% block content %}
+<div class="container content-container">
+    <div class="row no-gutters">
+
+        <div class="col-md-9 order-md-2">
+
+            <div class="single-post-home">
+
+                Scan this code with your wallet and present the requested Credential, then click Next
+                <br>
+                <img src="{{url}}">
+
+
+
+                 <a class="btn btn-sm btn-outline-success mr-1" href="{{ url_for('verification_state', verification_id=verification.verification_id)}}">Next</a>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="col-md-3 order-md-1">
+            {% include 'about_me_snippet.html' %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}
